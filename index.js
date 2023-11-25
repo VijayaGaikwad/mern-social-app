@@ -26,7 +26,7 @@ dotenv.config();
 
 
 mongoose
-  .connect(process.env.MONGO_DB, {
+  .connect("mongodb+srv://flexxit:flexxit@flexxit.gw2tzph.mongodb.net/SocialMedia?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
