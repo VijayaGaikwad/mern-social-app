@@ -1,11 +1,10 @@
 import express from 'express';
 const router = express.Router();
 import multer from 'multer';
-import { images } from '../public/images/images';
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-      cb(null, `public/images/images.js/${images}`);
+      cb(null, "https://drive.google.com/drive/folders/1Cl-Aa1mwu45KtWOHmTonV0c1rPkgOdBB?usp=drive_link");
     },
     filename: (req, file, cb) => {
       cb(null, req.body.name);
