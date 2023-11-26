@@ -1,10 +1,11 @@
 import express from 'express';
 const router = express.Router();
 import multer from 'multer';
+import { images } from '../public/images/images';
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-      cb(null, 'public/images/images.js/${images}');
+      cb(null, `public/images/images.js/${images}`);
     },
     filename: (req, file, cb) => {
       cb(null, req.body.name);
