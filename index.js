@@ -27,6 +27,13 @@ app.use(cors());
 
 dotenv.config();
 
+app.get('*', function (_, res) {
+  res.sendFile(path.join(__dirname, "./client/src/pages/Auth/Auth.jsx")
+  , function(err){
+    res.status(500).send(err);
+  }
+  )
+});
 
 mongoose
   .connect("mongodb+srv://flexxit:flexxit@flexxit.gw2tzph.mongodb.net/SocialMedia?retryWrites=true&w=majority", {
@@ -46,12 +53,3 @@ mongoose
   app.use('/user', UserRoute)
   app.use('/post', PostRoute)
   app.use('/upload', UploadRoute)
-
-
-  app.get('*', function (_, res) {
-      res.sendFile(path.join(__dirname, "./client/src/pages/Auth/Auth.jsx")
-      , function(err){
-        res.status(500).send(err);
-      }
-      )
-    });
