@@ -8,6 +8,9 @@ import AuthRoute from './Routes/AuthRoute.js';
 import UserRoute from './Routes/UserRoute.js';
 import PostRoute from './Routes/PostRoute.js';
 import UploadRoute from "./Routes/UploadRoute.js";
+import path  from "path";
+
+const __dirname = path.resolve();
 const PORT = process.env.PORT || 5000;
 
 // Routes
@@ -43,3 +46,12 @@ mongoose
   app.use('/user', UserRoute)
   app.use('/post', PostRoute)
   app.use('/upload', UploadRoute)
+
+
+  app.get('*', function (_, res) {
+      res.sendFile(path.join(__dirname, "./client/build/index.html")
+      , function(err){
+        res.status(500).send(err);
+      }
+      )
+    });

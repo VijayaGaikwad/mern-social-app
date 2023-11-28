@@ -4,7 +4,7 @@ import multer from 'multer';
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-      cb(null, "https://drive.google.com/drive/folders/1Cl-Aa1mwu45KtWOHmTonV0c1rPkgOdBB?usp=drive_link");
+      cb(null, "public/images");
     },
     filename: (req, file, cb) => {
       cb(null, req.body.name);
