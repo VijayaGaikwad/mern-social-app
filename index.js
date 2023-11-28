@@ -28,7 +28,7 @@ app.use(cors());
 dotenv.config();
 
 app.get('*', function (_, res) {
-  res.sendFile(path.join(__dirname, "./client/src/pages/Auth/Auth.jsx")
+  res.sendFile(path.join(__dirname, "public/index.html")
   , function(err){
     res.status(500).send(err);
   }
