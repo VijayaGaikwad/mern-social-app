@@ -8,9 +8,9 @@ import AuthRoute from './Routes/AuthRoute.js';
 import UserRoute from './Routes/UserRoute.js';
 import PostRoute from './Routes/PostRoute.js';
 import UploadRoute from "./Routes/UploadRoute.js";
-import path  from "path";
+// import path  from "path";
 
-const __dirname = path.resolve();
+// const __dirname = path.resolve();
 const PORT = process.env.PORT || 5000;
 
 // Routes
@@ -27,13 +27,13 @@ app.use(cors());
 
 dotenv.config();
 
-app.get('*', function (_, res) {
-  res.sendFile(path.join(__dirname, "public/index.html")
-  , function(err){
-    res.status(500).send(err);
-  }
-  )
-});
+// app.get('*', function (_, res) {
+//   res.sendFile(path.join(__dirname, "public/index.html")
+//   , function(err){
+//     res.status(500).send(err);
+//   }
+//   )
+// });
 
 mongoose
   .connect("mongodb+srv://flexxit:flexxit@flexxit.gw2tzph.mongodb.net/SocialMedia?retryWrites=true&w=majority", {
